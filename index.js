@@ -7,7 +7,7 @@ const getCwd = () => process.cwd();
 const { program } = require('commander');
 const handleCreate = () => {
     fs.writeFileSync(`${getCwd()}/.editorConfig`, fs.readFileSync(`${__dirname}/template/.editorConfig`))
-    fs.writeFileSync(`${getCwd()}/.prettierrc.js`, fs.readFileSync(`${__dirname}/template/.prettierrc.js`))
+    fs.writeFileSync(`${getCwd()}/.prettierrc`, fs.readFileSync(`${__dirname}/template/.prettierrc`))
     console.log('🎉 生成成功')
 }
 
