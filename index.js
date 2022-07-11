@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 const fs = require('fs')
 
-const { generateI18nJson } = require('.modules/copy-i18n/index')
+const { generateI18nJson } = require('./modules/copy-i18n/index')
+const { excelToJson } = require('./modules/jsonToExcel/excelToJson')
 
 //获得命令运行时的路径
 const getCwd = () => process.cwd();
@@ -25,6 +26,13 @@ program
   .description('读取zh.json 并生成输入语言的json文件')
   .action((languages) => {
     generateI18nJson(languages)
+  })
+
+program
+  .command('e2j fileName sheetName [languages...]')
+  .description('读取excel 转成多语言json文件')
+  .action((filename, sheetName, languages) => {
+    excelToJson(filename, sheetName, languages)
   })
 
 program.parse(process.argv);

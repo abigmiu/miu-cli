@@ -1,6 +1,8 @@
 {
     "Layout": {
-        "login": "Log in",
+        "login": {
+            "dasd": "Log in"
+        },
         "register": "Register",
         "center": "Profile",
         "logout": "Log out",

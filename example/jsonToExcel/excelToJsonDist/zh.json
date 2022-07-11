@@ -1,6 +1,8 @@
 {
     "Layout": {
-        "login": "登录",
+        "login": {
+            "dasd": "登录"
+        },
         "register": "注册",
         "center": "个人中心",
         "logout": "退出",
