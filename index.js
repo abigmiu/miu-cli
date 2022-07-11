@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const fs = require('fs')
 
-const { generateI18nJson } = require('./copy-i18n/index')
+const { generateI18nJson } = require('.modules/copy-i18n/index')
 
 //获得命令运行时的路径
 const getCwd = () => process.cwd();
