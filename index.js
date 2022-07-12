@@ -3,6 +3,7 @@ const fs = require('fs')
 
 const { generateI18nJson } = require('./modules/copy-i18n/index')
 const { excelToJson } = require('./modules/jsonToExcel/excelToJson')
+const { jsonToExcel } = require('./modules/jsonToExcel/index')
 
 //获得命令运行时的路径
 const getCwd = () => process.cwd();
@@ -35,4 +36,10 @@ program
     excelToJson(filename, sheetName, languages)
   })
 
+program
+  .command('j2e fileName sheetName')
+  .description('读取当前文件夹下的json文件转成excel')
+  .action((filename, sheetName) => {
+    jsonToExcel(filename, sheetName)
+  })
 program.parse(process.argv);
